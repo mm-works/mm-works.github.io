@@ -6,6 +6,7 @@
 
 - [引言](./lessons/000001)
 - [Hello Word](./lessons/000002)
+- [擦枪](./lessons/000003)
 
 ## 打赏
 
