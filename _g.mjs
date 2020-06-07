@@ -9,11 +9,12 @@ async function main() {
 	const root = './steps';
 	console.time('mm');
 	const files = await readdir(root);
-	const indexes = await Promise.all(files.map(async (file) => {
+	const indexes = await Promise.all(files.map(async (file, i) => {
 		const path = join(root, file);
 		const txt = await readFile(path, 'utf8');
 		const title = /.*#\s(.*)\n/.exec(txt)[1];
-		return `- [${title}](${path.replace('.md', '')})`;
+		const idx = (i + 1).toString().padStart(2, '0');
+		return `- [第${idx}章 ${title}](${path.replace('.md', '')})`;
 	}));
 	const content = `# 蛮蛮工作室
 
